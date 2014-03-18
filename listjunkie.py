@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import subscribe
 import emailaccount
 import logging
@@ -30,10 +31,6 @@ class Main( object ):
 					subscribe.Subscribe( server, listName, subscriberAddress, fullName, emailAccount )
 				except:
 					logging.exception( 'failed to subscribe to %s on %s' % ( listName, server ) )
-
-				duration = 60 * random.choice( [1,2,3] )
-				logging.info( 'sleep %s seconds so as not to arrouse defenses in servers' % duration )
-				time.sleep( duration )
 
 		logging.info( 'all done.' )
 
